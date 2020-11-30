@@ -22,12 +22,22 @@ app.get('/student', (req, res)=>{
     res.render(`student-data`,{students: data.getAll()
     })
 })
+app.get('/teacher', (req, res)=>{
+    res.render(`teacher`)
+})
 
+app.get('/contactus', (req, res)=>{
+    res.render(`contactus`)
+})
 //Redirect
 
 app.get('/', (req, res)=>{
     res.redirect('/home')
 })
+
+//404- Page Not Found
+
+
 //Listening for port 3000
 
 app.listen(3000, function(){
