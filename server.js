@@ -1,18 +1,34 @@
-//Loading Express
+//Loading Express & Providing access to pages
 
 const express = require ('express')
+const path =require('path')
+const data = require('./data/students')
 
 //creating express app
 
 const app =express()
 
-//Sending 
+//View Engine - EJS
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'))
 
-app.get('/', (req, res)=>{
-    res.send(`<h1>Student Home Page</h1>`)
+//Mount Routes
+
+app.get('/home', (req, res)=>{
+    res.render(`home`)
 })
 
-//Listening
+app.get('/student', (req, res)=>{
+    res.render(`student-data`,{students: data.getAll()
+    })
+})
+
+//Redirect
+
+app.get('/', (req, res)=>{
+    res.redirect('/home')
+})
+//Listening for port 3000
 
 app.listen(3000, function(){
     console.log('listening to port 3000, start loading stuff')
