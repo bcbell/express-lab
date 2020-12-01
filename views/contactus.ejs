@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/header.ejs') %> 
+<body>
+    <%- include('../partials/nav.ejs') %> 
+
+    <h3 class= "contact">Contact Us</h3>
+    <form>
+        <div class="row">
+            <input type="checkbox" id="student" name="student">
+            <label for= "student">Student</label>
+            <input type="checkbox" id= "parent" name="parent">
+            <label for="parent">Parent</label>
+            <input type="checkbox" id="community" name="community">
+            <label for="community">Community</label> 
+
+        </div>
+       <div class="row">
+            <label class="required" for= "firstName">First Name:</label>
+            <input class="input" name="firstName" type="text"> 
+            <label class= "required" for="lastName">Last Name:</label>
+            <input class="input" name="lastName" type="text">
+        </div>
+        <div class="row">
+            <label class= "required" for= "email">Email:</label>
+            <input class= "input" name= "email" type="email" >
+        </div>
+        <div class="row">
+            <label class="required" for="phone">Phone Number:</label><input class="input" name="areaCode" type="number"><input class= "input" name="phone" type="number"><input class="input" name="phone" type="number">
+        </div>
+        <label class="text">Comments:</label><textarea></textarea>
+        <div class="row">
+            <input type="submit" value="Submit">
+        </div>
+
+
+    </form>
+
+    <%- include('../partials/footer.ejs') %> 
+</body>
+</html>

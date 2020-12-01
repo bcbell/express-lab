@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GIHS | Student</title>
+        <title>GIHS | Teacher</title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">  
         <link rel="stylesheet" href="/style.css">
     </head> 
 <body>
@@ -14,22 +14,20 @@
     <h3>Student Information</h3>
     <h4>Please contact your assigned teacher for additional instructions</h4>
     <ul>
-           <% students.forEach(function(stut){ %>
-            <table class= student>
+           <% teachers.forEach(function(teach){ %>
+            <table class= teacher>
                <tr>
-                    <th>Student</th><th>Grade Level</th><th>Teacher</th>
+                    <th>Teacher</th><th>Grade Level Assignment</th>
                </tr> 
                 <p>
-                    <td><%= stut.student %></td><td><%= stut.schoolYear %></td><td><%= stut.teacher %> </td>
+                    <td><%= teach.teacher %></td><td><%= teach.schoolYear %></td>
                 </p>
-                
-                
-                 
-                 
-            </form>
+                    
+            </table>
 
           <% }); %> 
     </ul>
     <%- include('../partials/footer.ejs') %> 
 </body>
+    
 </html>

@@ -12,22 +12,26 @@ const app =express()
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
+//middleware and static files
+app.use(express.static('public'))
+
 //Mount Routes
 
 app.get('/home', (req, res)=>{
-    res.render(`home`)
+    res.render(`home`, {title: "Home"})
 })
 
 app.get('/student', (req, res)=>{
-    res.render(`student-data`,{students: data.getAll()
+    res.render(`student-data`, {students: data.getAll()
     })
 })
 app.get('/teacher', (req, res)=>{
-    res.render(`teacher`)
+    res.render(`teachers`, {teachers: data.getAll()
+    })
 })
 
 app.get('/contactus', (req, res)=>{
-    res.render(`contactus`)
+    res.render(`contactus`, {title: 'Contact Us'})
 })
 //Redirect
 
@@ -36,7 +40,9 @@ app.get('/', (req, res)=>{
 })
 
 //404- Page Not Found
-
+app.use((req, res)=>{
+    res.status(404).render('404', { title: 'Page Not Found'})
+})
 
 //Listening for port 3000
 
