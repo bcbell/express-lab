@@ -1,5 +1,21 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+}
 body{
    background-color: orange;
    font-family: 'Nerko One', cursive;
 }
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
 
